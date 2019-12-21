@@ -12,7 +12,8 @@ $("#options-container .fa-sliders-h").click(function(){
  
     if($("#options-container").css("left") == '0px')
     {
-       $("#options-container").animate({left:'-'+ opW} , 1000);
+       $("#options-container").animate({left:'-'+opW} , 1000);
+       $("#options-box").show(1000)
             $(".fa-sliders-h").show(1000)
     }
      else
