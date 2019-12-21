@@ -48,6 +48,8 @@ p{
  background-color: rgba(0,0,0,.7);
      float: left;
     padding: 10px;
+    display: none;
+    
     } 
   #options-container i.fa-sliders-h   {
   float: left;
