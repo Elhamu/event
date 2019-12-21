@@ -1,70 +1,72 @@
 
 // section one
- $(".fa-sliders-h").click(function(){
- 	
- 		$(this).animate({left:'270px'},1000,function(){
- 		$("#options-container").fadeIn(1000,function(){
-	 })
- 		})
+let opW = $("#options-box").outerWidth()
+ $(".fa-times-circle").click(function(){
+        $("#options-container").animate({left:'-'+ opW} , 1000);
+         $(".fa-sliders-h").show(1000)
 
- })
-  $(".fa-sliders-h").click(function(){
- 	$("#options-box").toggle(1000)
- })
-
-$(".fa-times-circle").click(function(){
-	$("#options-container").fadeOut(1000,function(){
-		 $(".fa-sliders-h").css("left",'10px')
-	})
 })
 
 
-$(" #options-container a #acc").click(function(){
-$("#acc").animate({width:'50%'},1000);
-
- $("#acc ").fadeIn(2000,function(){
+$("#options-container .fa-sliders-h").click(function(){
  
+    if($("#options-container").css("left") == '0px')
+    {
+       $("#options-container").animate({left:'-'+ opW} , 1000);
+            $(".fa-sliders-h").show(1000)
+    }
+     else
+    {
+          $("#options-container").animate({left:'0'} , 1000)
+               $(".fa-sliders-h").hide(1000)
+       
+    }
+ })
+
+
+
+$("#options-box a").click(function(){
+    let Href = $(this).attr("href");
+    let scrollSection = $(Href).offset().top;
+    $("html,body").animate({scrollTop : scrollSection},1000)
 })
-})
-
-
-
 //section two
-$("h3").click(function(){
-	$(this).siblings().slideToggle(1000)
 
-})
-
+$('.collapse').collapse()
 
 //section three
 
-var now = new Date();
-// console.log(now) 
-var event = new Date(2019,12,12);
-var nowTime = now.getTime();
-var eventTime = event.getTime();
-var s = Math.floor(eventTime / 1000);
-var m = Math.floor(s / 60);
-var h = Math.floor(m / 60);
-var d = Math.floor(h / 24)-30;
 
-h %= 24;
-m %= 60;
-s %= 60;
-h = (h < 10) ? "0" + h : h;
-m = (m < 10) ? "0" + m : m;
-s = (s < 10) ? "0" + s : s;
-document.getElementById("days").innerHTML = "<h3 class='overlay'>"+  d + " D"+"</h3>";
-document.getElementById("hours").innerHTML ="<h3  class='overlay'>"+  h + " h"+"</h3>";
-document.getElementById("minutes").innerHTML = "<h3 class='overlay'>"+  m + " m"+"</h3>";
-document.getElementById("seconds").innerHTML = "<h3 class='overlay'>"+  s + " s"+"</h3>";
-	
-		
+var end = new Date('12/30/2019 10:37:20 PM');
 
+    var _second = 1000;
+    var _minute = _second * 60;
+    var _hour = _minute * 60;
+    var _day = _hour * 24;
+    var timer;
 
+    function showRemaining() {
+        var now = new Date();
+        var distance = end - now;
+        if (distance < 0) {
 
+             clearInterval(timer);
+            document.getElementById('days').innerHTML = 'EXPIRED!';
 
+            return;
+        }
+        var days = Math.floor(distance / _day);
+        var hours = Math.floor((distance % _day) / _hour);
+        var minutes = Math.floor((distance % _hour) / _minute);
+        var seconds = Math.floor((distance % _minute) / _second);
 
+        document.getElementById('days').innerHTML = days + 'days ';
+        document.getElementById('hours').innerHTML = hours + 'hrs ';
+        document.getElementById('minutes').innerHTML = minutes + 'mins ';
+        document.getElementById('seconds').innerHTML = seconds + 'secs';
+    }
+
+    timer = setInterval(showRemaining, 1000);
 
 
 
@@ -76,7 +78,30 @@ $("textarea").keyup(function(){
 	if(text <= 0){
 		$("#char").text("your available character finished");
 
+
 	}else{
 		$("#char").text(text)
 	}
+})
+
+
+
+$(window).scroll( function(){
+
+
+    let sectiontwo = $("#acc").offset().top; // 600px
+    
+    if( $(window).scrollTop() > sectiontwo - 50)
+        {
+        $("#btnUp").show(1000);       
+        }
+    else
+        {
+        $("#btnUp").hide(1000);       
+            
+        }
+})
+
+$("#btnUp").click(function(){
+    $("html,body").animate({scrollTop: 0},1000)
 })
