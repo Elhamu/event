@@ -32,9 +32,12 @@ $("#options-box a").click(function(){
     $("html,body").animate({scrollTop : scrollSection},1000)
 })
 //section two
-
-$('.collapse').collapse()
-
+$("div:first").css("display","block")
+$("h3").click(function(){
+    $(this).next().slideToggle(1000);
+    $(".test").not($(this).next()).slideUp(1000)
+    
+})
 //section three
 
 
