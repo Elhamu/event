@@ -2,15 +2,18 @@ body{
 font-family: 'Roboto', sans-serif;
 font-family: 'Courier Prime', monospace;}
 
+
 .sectionone
-{	 background-image: url('../images/events-heavenly-header.jpg');
+{	 background-image: url('../events-heavenly-header.jpg');
 	
-        background-size: 100% 100%;
+  
+      background-size: 100% 100%;
     background-repeat: no-repeat;
 	width: 100%;
 	height:720px;
 	position: relative;
 }
+
 .sectiontwo{
     background-color:  rgba(214, 46, 51 , 0.6);
     width: 100%;
@@ -154,7 +157,7 @@ a:hover{
 	width: 100%;
     height:420px;
     margin-top: 100px;
-    background-image: url('../images/invitation-2508607__340.jpg');
+    background-image: url('../invitation-2508607__340.jpg');
      background-size: 100% 100%;
     background-repeat: no-repeat;
     position: relative;
