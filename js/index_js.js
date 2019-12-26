@@ -41,7 +41,7 @@ $("h3").click(function(){
 //section three
 
 
-var end = new Date('12/30/2019 10:37:20 PM');
+var end = new Date('12/30/2020 10:37:20 PM');
 
     var _second = 1000;
     var _minute = _second * 60;
